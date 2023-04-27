@@ -1,0 +1,13 @@
+:root {
+    /* Declare variables */
+
+  }
+  /*Smooth scrolling*/
+html {
+    scroll-behavior: smooth;
+  }
+  /*Background image upper part*/
+body {
+    background-image: url("../images/bg-househunters-1.jpg");
+    background-size: cover;
+  }
