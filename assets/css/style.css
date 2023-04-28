@@ -19,13 +19,13 @@ margin: 15% auto;
 
 }
 
-
 h1{
   color:var(--dark-grey-color) ;
 }
 h2{
   color:var(--light-grey-color);
 }
+/*Submit button search */
 .button{
         
     background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
@@ -40,7 +40,7 @@ h2{
     border-radius: 10px;
     display: block;
   }
-
+/*Submit button search hover */
   .button:hover {
     background-position: right center; 
     color: #fff;
