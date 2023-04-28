@@ -6,7 +6,6 @@
 }
 /*Smooth scrolling*/
 html {
-
   overflow: hidden; /* Hide scrollbars */
 }
 /*Background image upper part*/
@@ -16,18 +15,17 @@ margin: 15% auto;
   background-size: cover;
   background-repeat:   no-repeat;
   background-position: center center;
-
 }
-
+/*h1 header */
 h1{
   color:var(--dark-grey-color) ;
 }
+/*h2 header */
 h2{
   color:var(--light-grey-color);
 }
-/*Submit button search */
+/*submit button search */
 .button{
-        
     background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
     margin: 10px auto;
     padding: 15px 45px;
@@ -40,7 +38,7 @@ h2{
     border-radius: 10px;
     display: block;
   }
-/*Submit button search hover */
+/*submit button search hover */
   .button:hover {
     background-position: right center; 
     color: #fff;
