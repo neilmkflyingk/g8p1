@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> House Hunters</title>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
-    </head>
 
-    <body>
-        <h1 style="text-align:center;"> HOUSE HUNTERS </h1>
+<head>
+    <title> House Hunters</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--links to CSS files foundation css framework-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/foundation.css">
+    <!--custom CSS file-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-        <h2 style="text-align:center;">Looking for your next home? Find Available Listings Here!</h2>
+<body>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x ">
+            <div class=" large-12 cell">
+                <!--h1 header-->
+                <h1 class="text-center"> HOUSE HUNTERS </h1>
+            </div>
+        </div>
+        <!--h2 header-->
+        <h2 class="text-center">Looking for your next home? Find Available Listings Here!</h2>
+        <!--form-->
         <form id="address-form">
-            <input type="text" class="street-address-forum" id="address-search" name="address-search" placeholder="Enter Address Street" />
-            <button class="btn btn-info">Search Now</button>
+            <div class="grid-x grid-padding-x">
+                <div class=" cell ">
+                    <!--input-->
+                    <input type="text" class="street-address-forum cell input-group-field" id="address-search"
+                        name="address-search" placeholder="Enter Address Street" />
+                    <!--search button-->
+                    <button class="button large">Search Now</button>
+                </div>
+            </div>
         </form>
-    </body>
+    </div>
+    <!--links to JS files foundation css framework-->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <!--custom JS file-->
+    <script src="js/script.js"></script>
+</body>
+
 </html>
