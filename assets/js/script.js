@@ -18,4 +18,3 @@ function fetchHandler() {
         console.log("Longitude: ", longitude);
     });
 }
-  
