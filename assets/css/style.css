@@ -5,11 +5,15 @@
 }
 /*Background image upper part*/
 body {
-  margin: 15% auto;
+  margin: 0 auto;
   background-image: url("../images/bg1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  height: 100%;
+}
+.main-section {
+  margin-top: 15%;
 }
 /*h1 header */
 h1 {
@@ -95,7 +99,7 @@ h4 {
 }
 
 .result {
-  margin-top: 20%;
+  margin-top: 10%;
   color: white;
 }
 /*search result card*/
@@ -114,3 +118,6 @@ h4 {
   margin: 1% 0;
 }
 
+.hidden {
+  display: none;
+}
