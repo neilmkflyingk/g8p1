@@ -1,0 +1,50 @@
+:root {
+  /* Declare variables */
+  --dark-grey-color: #2e2f30;
+  --light-grey-color: #4a4b4c;
+}
+/*Smooth scrolling*/
+html {
+  overflow: hidden; /* Hide scrollbars */
+}
+/*Background image upper part*/
+body {
+  margin: 15% auto;
+  background-image: url("../images/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/*h1 header */
+h1 {
+  color: var(--dark-grey-color);
+}
+/*h2 header */
+h2 {
+  color: var(--light-grey-color);
+}
+/*submit button search */
+.button {
+  background-image: linear-gradient(
+    to right,
+    #4776e6 0%,
+    #8e54e9 51%,
+    #4776e6 100%
+  );
+  margin: 10px auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+/*submit button search hover */
+.button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
