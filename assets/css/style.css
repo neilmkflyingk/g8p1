@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 .main-section {
-  margin-top: 15%;
+  margin: 15% auto;
 }
 /*h1 header */
 h1 {
