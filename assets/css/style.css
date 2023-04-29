@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 .main-section {
-  margin: 15% auto;
+  margin: 10% auto;
 }
 /*h1 header */
 h1 {
@@ -98,7 +98,7 @@ h4 {
 }
 
 .result {
-  margin-top: 10%;
+
   color: white;
 }
 /*search result card*/
