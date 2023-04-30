@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title> House Hunters</title>
     <meta charset="UTF-8" />
@@ -17,6 +18,7 @@
     <!--custom CSS file-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <div class="grid-container main-section">
         <div class="grid-x grid-padding-x ">
@@ -35,7 +37,6 @@
                     <input type="text" class="street-address-forum cell input-group-field" id="address-search"
                         name="address-search" placeholder="Enter Address Street" />
                     <!--search button-->
-
                     <button id="button" class="button large">Search Now</button>
                 </div>
             </div>
@@ -47,53 +48,11 @@
             <div class="grid-x grid-padding-x">
                 <!--search result h3 block & icon-->
                 <div class="large-12 cell ">
-
                     <h3>Search results <i class="fi-magnifying-glass"></i></h3>
                 </div>
             </div>
         </div>
-        <!--search result card block-->
-        <div class="result-card">
-            <div class="grid-x grid-margin-x result-card-content">
-                <div class="medium-2 small-6 cell">
-                    <!--image result block-->
-                    <div class="thumbnail ">
-                        <img class="result-card-image" src="https://placehold.it/200" alt="">
-                    </div>
-                </div>
-                <!--h1 & text result card block-->
-                <div class="result-card-title medium-10 small-6 cel">
-                    <a href="house-card.html">
-                        <h4>Barnes & Noble, 555, 5th Avenue, Midtown East, Manhattan, New York County, New York, 10017, United States</h4>
-                    </a>
-
-                    <p class="house-description">Charming home located in prime Waverly Park location with top-rated Los Altos schools.  Abundantnatural light throughout the home Move right in w/new interior paint.  Double pane windows throughout.  Expansive formal living room.  </p>
-                </div>
-            </div>
-        </div>
-        <!--search result card block-->
-        <div class="result-card">
-            <div class="grid-x grid-margin-x result-card-content">
-                <div class="medium-2 small-6 cell">
-                    <!--image result block-->
-                    <div class="thumbnail ">
-                        <img class="result-card-image" src="https://placehold.it/200"
-                            alt="image of a current house from the search">
-                    </div>
-                </div>
-                <!--h1 & text result card block-->
-                <div class="result-card-title medium-10 small-6 cel">
-                    <a href="house-card.html">
-                        <h4>Statue of Liberty, Flagpole Plaza, Manhattan Community Board 1, Manhattan, New York County, New York, 10004, United States</h4>
-                    </a>
-
-                    <p class="house-description">Enjoy all that Mountain View, Los Altos, Stanford and Palo Alto have to offer.  Conveniently located almost in North Los Altos just beside multimillion dollar houses in Los Altos.  Near Google, Facebook and Apple. </p>
-                </div>
-            </div>
-        </div>
-        <!--footer github link-->
-        <footer class="text-center"><a href="https://github.com/neilmkflyingk/house-hunters"><i
-                    class="fi-social-github"> HOUSE HUNTERS</i></a></footer>
+        <!-- here adds search-result & footer dynamically generated in JS file . it shows on click submit-->
     </div>
     <!--links to JS files foundation css framework-->
     <script src="assets/js/vendor/jquery.js"></script>
@@ -101,13 +60,8 @@
     <script src="assets/js/vendor/foundation.js"></script>
     <!--custom JS file-->
     <script src="assets/js/script.js"></script>
-</body>
-</html>
-<script src="assets/js/vendor/jquery.js"></script>
-<script src="assets/js/vendor/what-input.js"></script>
-<script src="assets/js/vendor/foundation.js"></script>
-<!--custom JS file-->
-<script src="assets/js/script.js"></script>
+    <!--custom JS file generate search result-->
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

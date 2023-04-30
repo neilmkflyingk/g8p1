@@ -18,11 +18,3 @@ function fetchHandler(event) {
       console.log("Longitude: ", longitude);
     });
 }
-
-//Show results on click
-$(document).ready(function () {
-  $("button").click(function () {
-    // show results on click
-    $(".result").removeClass("hidden");
-  });
-});
