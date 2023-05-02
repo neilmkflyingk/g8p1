@@ -1,9 +1,27 @@
+var listings = [];
 
 //Show results on click
 $(document).ready(function () {
   $("button").click(function () {
     // show results on click
     $(".result").removeClass("hidden");
+
+    // function init() {
+    // var storedListings = JSON.parse(localStorage.getItem("listing"));
+    // if (storedListings != null) {
+    //   listings = storedListings;
+    // }}
+
+    // function storeListings() {
+    //   localStorage.setItem("listing", JSON.stringify(listings));
+    // }
+
+    var listing = (document.getElementById("address-search").value);
+    localStorage.setItem("listing", listing);
+
+    // init();
+    // storeListings();
+    
   });
 });  
 
