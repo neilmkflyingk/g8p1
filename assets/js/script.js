@@ -18,10 +18,17 @@ function fetchHandler(event) {
       var longitude = data[0].lon;
       console.log("Latitude: ", latitude);
       console.log("Longitude: ", longitude);
-    });
-};
 
-fetch("https://api.openbrewerydb.org/v1/breweries?by_dist={" + latitude + ","+longitude + "}")
-    .then(function (response) {
-      return response.json();
-    })
+    fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=" + latitude + "," + longitude + "&per_page=3",)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        var name = data[0].name;
+        var website = data[0].website_url;
+        console.log("Name: ", name);
+        console.log("Website: ", website);
+      });
+    });
+}
