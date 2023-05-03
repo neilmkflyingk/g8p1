@@ -1,5 +1,7 @@
 var button = document.querySelector("#button");
 button.addEventListener("click", fetchHandler);
+var latitude;
+var longitude;
 
 function fetchHandler(event) {
   event.preventDefault();
@@ -18,3 +20,8 @@ function fetchHandler(event) {
       console.log("Longitude: ", longitude);
     });
 };
+
+fetch("https://api.openbrewerydb.org/v1/breweries?by_dist={" + latitude + ","+longitude + "}")
+    .then(function (response) {
+      return response.json();
+    })
