@@ -14,17 +14,20 @@ function fetchHandler(event) {
     })
     .then(function (data) {
       console.log(data);
-      var latitude = data[0].lat;
-      var longitude = data[0].lon;
+      latitude = data[0].lat;
+      longitude = data[0].lon;
       console.log("Latitude: ", latitude);
       console.log("Longitude: ", longitude);
 
-    fetch("https://api.openbrewerydb.org/v1/breweries?by_dist=" + latitude + "," + longitude + "&per_page=3",)
+    fetch("https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/Snapshot?latitude={"+latitude+"}&longitude={"+longitude+"}&radius=2", {
+      Accept:application/json,
+      APIKey:b4030edd35f70d5e390f969f2e5c0f6f,
+    })
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        console.log('response:', data);
         var name = data[0].name;
         var website = data[0].website_url;
         console.log("Name: ", name);
