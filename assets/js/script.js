@@ -8,6 +8,7 @@ var bedrooms;
 var size;
 var lot;
 var proptype;
+var listing;
 
 function fetchHandler(event) {
   event.preventDefault();
@@ -36,7 +37,7 @@ function fetchHandler(event) {
         
         
         console.log('address: ', street);
-        data.property.forEach(element => {
+        for( let i =0; i < data.property.length ; i ++){
           street = element.address.oneLine
           bathrooms = element.building.rooms.bathstotal
           bedrooms = element.building.rooms.beds
@@ -44,7 +45,10 @@ function fetchHandler(event) {
           lot = element.lot.lotSize1
           proptype = element.summary.propclass
           generatePropertyCard();
-        });
+        }
+        // data.property.forEach(element => {
+         
+        // });
       });
     });
 }
@@ -66,7 +70,7 @@ $(document).ready(function () {
     //   localStorage.setItem("listing", JSON.stringify(listings));
     // }
 
-    var listing = (document.getElementById("address-search").value);
+    listing = (document.getElementById("address-search").value);
     localStorage.setItem("listing", listing);
 
     // init();
@@ -77,6 +81,7 @@ $(document).ready(function () {
 
 // create & add elements using jquery
 function generatePropertyCard() {
+  console.log("calling generate card");
   var resultCardBlock = "<div class='result-card'></div>";  
   $(".result").append(resultCardBlock);  
   var resultCardContent = "<div class='grid-x grid-margin-x result-card-content'></div>";
@@ -102,5 +107,13 @@ function generatePropertyCard() {
   $(".result").append(footer); 
 
 }
+var inputText = (document.getElementById("address-search"));
+function loadData() {
+  var saveAddress = localStorage.getItem('listing');
+  console.log('saveAddress', saveAddress)
+  inputText.value = saveAddress
+}
 
-
+$(function() {
+  loadData();
+})
