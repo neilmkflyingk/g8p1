@@ -111,10 +111,6 @@ h4 {
 .result-card-content {
   margin: 2%;
 }
-/*search result image*/
-.thumbnail {
-  margin: 1% 0;
-}
 
 .hidden {
   display: none;
@@ -156,4 +152,15 @@ footer a {
 
 .main {
   height: 100%;
+}
+.card-section {
+  border: 1px solid #e6e6e6;
+  margin-bottom: 5px;
+}
+
+.card-section p {
+  background-color: #e6e6e6;
+  margin: 10px 0;
+  padding: 10px;
+  max-width: 300px;
 }
