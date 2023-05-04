@@ -27,7 +27,7 @@ function fetchHandler(event) {
       longitude = data[0].lon;
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
- /*Fetch. Get the list of poperties from the address entered by the user*/
+      
       fetch(
         "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?latitude=" +
           latitude +
@@ -43,8 +43,10 @@ function fetchHandler(event) {
       )
         .then(function (response) {
           if (response.status !== 200) {
-            // If response.status is not 200 view this message.
-            $(".card-section").append("<h5>No addres was found with your search criteria. Try another addres!</h5>");
+            /*If response.status is not 200 view this message.*/
+            $(".card-section").append(
+              "<h5>No properties was found with your search criteria. Try another address!</h5>"
+            );
           }
           return response.json();
         })
@@ -59,7 +61,7 @@ function fetchHandler(event) {
             size = element.building.size.universalsize;
             lot = element.lot.lotSize1;
             proptype = element.summary.propclass;
-             /* Create title & description of each house*/
+            /* Create title & description of each house*/
 
             /* Create ul & append to the page*/
             $(".card-section").append("<ul class='list'>");
@@ -93,7 +95,9 @@ function fetchHandler(event) {
 $(document).ready(function () {
   $("button").click(function () {
     if (!$("#address-search").val()) {
-      alert("Enter Street Address, City and Zip Code!");
+      $(".form-input").append(
+       "<p>Enter Street Address, City and Zip Code!</p>")
+
     } else {
       $(".result").removeClass("hidden");
     }
