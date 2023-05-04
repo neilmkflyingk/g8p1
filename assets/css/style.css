@@ -158,9 +158,16 @@ footer a {
   margin-bottom: 5px;
 }
 
-.card-section p {
+.card-section li {
   background-color: #e6e6e6;
   margin: 10px 0;
   padding: 10px;
   max-width: 300px;
+  list-style: none;
 }
+h5{
+  color:orange;
+  text-transform: uppercase;
+font-weight: bold;
+padding: 0px 10%;
+;}

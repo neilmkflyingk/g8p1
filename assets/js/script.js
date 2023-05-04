@@ -8,19 +8,18 @@ var bedrooms;
 var size;
 var lot;
 var proptype;
-var listing;
 
 function fetchHandler(event) {
   event.preventDefault();
 
   var address = document.getElementById("address-search").value;
-  console.log('address-input:', address);
+  console.log("address-input:", address);
   fetch("https://geocode.maps.co/search?q={" + address + "}")
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log('geocode-response: ', data);
+      console.log("geocode-response: ", data);
       latitude = data[0].lat;
       longitude = data[0].lon;
       console.log("Latitude:", latitude);
@@ -53,17 +52,22 @@ function fetchHandler(event) {
 }
 var listings = [];
 
-//Show results on click
+//Function show results on click or alert if empty
 $(document).ready(function () {
   $("button").click(function () {
-    // show results on click
-    $(".result").removeClass("hidden");
+    if (!$("#address-search").val()) {
+      alert("Enter Street Address, City and Zip Code!");
+    }
+    else {
+      $(".result").removeClass("hidden");
+    }
+
 
 
     var listing = (document.getElementById("address-search").value);
     localStorage.setItem("listing", listing);
   });
-});  
+});
 
 // create & add elements using jquery
   var resultCardBlock = "<div class='result-card'></div>";  
