@@ -70,7 +70,7 @@ function fetchHandler(event) {
           if (response.status !== 200) {
             /*If response.status is not 200 view this message.*/
             $(".card-section").append(
-              "<h5>No addres was found with your search criteria. Try another addres!</h5>"
+              "<h5>No properties was found with your search criteria. Try another address!</h5>"
             );
           }
           return response.json();
