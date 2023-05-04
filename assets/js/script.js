@@ -43,7 +43,9 @@ function fetchHandler(event) {
           size = element.building.size.universalsize
           lot = element.lot.lotSize1
           proptype = element.summary.propclass
-          generatePropertyCard();
+          $(".card-section").append( "<h4>"+ street + "</h4>");
+         //create house description  
+    $(".card-section").append("<p>Bathrooms: " + bathrooms + "</p>", "<p>Bedrooms: " + bedrooms + "</p>","<p>Square Footage: " + size + "</p>","<p>Lot Size (acres): " + lot + "</p>","<p>Property Type: " + proptype + "</p>",);  
         });
       });
     });
@@ -76,31 +78,17 @@ $(document).ready(function () {
 });  
 
 // create & add elements using jquery
-function generatePropertyCard() {
+
   var resultCardBlock = "<div class='result-card'></div>";  
   $(".result").append(resultCardBlock);  
   var resultCardContent = "<div class='grid-x grid-margin-x result-card-content'></div>";
-  $(".result-card").append(resultCardContent);  
-  var leftBlock = "<div class='medium-2 small-6 cell left-block'></div>"
-  $(".result-card-content").append(leftBlock);  
-  //var thumbnail = "<div class='thumbnail'></div>";
-  //$(".left-block").append(thumbnail);
-  //create house image  
-  var resultCarImage = "<img class='result-card-image' src='https://placehold.it/200' alt='placeholder image'></img>";
-  $(".thumbnail").append(resultCarImage);  
-  var resultCardTitle = "<div class='result-card-title medium-10 small-6 cel'></div>";
+  $(".result-card").append(resultCardContent);   
+  var resultCardTitle = "<div class='card-section'></div>";
   $(".result-card-content").append(resultCardTitle);  
-  var houseCard = "<a href='house-card.html' class='title-link'>";
-  $(".result-card-title").append(houseCard);  
   //create house title  
-  //var title = "<h4>Barnes & Noble, 555, 5th Avenue, Midtown East, Manhattan, New York County, New York, 10017, United States</h4>";
-   $(".title-link").append("<h4>" + street + "</h4>");
-  //create house description  
-  //var text = "<p>" + bathrooms + "</p>"+"<p>" + rooms + "</p>"
-  $(".result-card-title").append("<p>Bathrooms: " + bathrooms + "</p>", "<p>Bedrooms: " + bedrooms + "</p>","<p>Square Footage: " + size + "</p>","<p>Lot Size (acres): " + lot + "</p>","<p>Property Type: " + proptype + "</p>",);  
   var footer = "<footer class='text-center'><a href='https://github.com/neilmkflyingk/house-hunters'><i class='fi-social-github'>HOUSE HUNTERS</i></a></footer>";
   $(".result").append(footer); 
 
-}
+
 
 
