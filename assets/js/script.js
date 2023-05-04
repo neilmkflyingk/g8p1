@@ -27,80 +27,55 @@ function fetchHandler(event) {
       longitude = data[0].lon;
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
-      
-      fetch(
-        "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?latitude=" +
-          latitude +
-          "&longitude=" +
-          longitude +
-          "&radius=2",
-        {
-          headers: {
-            Accept: "application/json",
-            APIKey: "b4030edd35f70d5e390f969f2e5c0f6f",
-          },
-        }
-      )
-        .then(function (response) {
-          if (response.status !== 200) {
-            /*If response.status is not 200 view this message.*/
-            $(".card-section").append(
-              "<h5>No properties was found with your search criteria. Try another address!</h5>"
-            );
-          }
-          return response.json();
-        })
-        .then(function (data) {
-          console.log("attom-response:", data);
 
-
-    fetch("https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?latitude="+latitude+"&longitude="+longitude+"&radius=2", {
+    fetch("https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?latitude="+latitude+"&longitude="+longitude+"&radius=2", { 
       headers: {'Accept': 'application/json', 'APIKey': '857b02eb1e097842f37baa5184c5ccf7'}
-    })
-      .then(function (response) {
-        return response.json();
       })
-      .then(function (data) {
-        console.log('attom-response:', data);
-        
-        
-        console.log('address: ', street);
-        data.property.forEach(element => {
-          street = element.address.oneLine
-          bathrooms = element.building.rooms.bathstotal
-          bedrooms = element.building.rooms.beds
-          size = element.building.size.universalsize
-          lot = element.lot.lotSize1
-          proptype = element.summary.propclass
-
-    /* Create title & description of each house*/
-
-            /* Create ul & append to the page*/
-            $(".card-section").append("<ul class='list'>");
-            /* Append h4 & li list inside ul*/
-            $(".list").append(
-              /* Create title h4 & append to the page*/
-              "<h4>" + street + "</h4>",
-              /* Create list of li  & append to the page*/
-              "<li><img src='https://img.icons8.com/ios/20/null/bath.png'/> Bathrooms: " +
-                bathrooms +
-                "</li>",
-              "<li> <img src='https://img.icons8.com/ios/20/null/bedroom.png'/> Bedrooms: " +
-                bedrooms +
-                "</li>",
-              "<li><img src='https://img.icons8.com/external-outline-black-m-oki-orlando/20/null/external-squares-math-vol-2-outline-outline-black-m-oki-orlando.png'/> Square Footage: " +
-                size +
-                "</li>",
-              "<li><img src='https://img.icons8.com/ios/20/null/screen-resolution.png'/> Lot Size (acres): " +
-                lot +
-                "</li>",
-              "<li><img src='https://img.icons8.com/ios/20/null/home--v1.png'/> Property Type: " +
-                proptype +
-                "</li>"
+    .then(function (response) {
+      if (response.status !== 200) {
+      /*If response.status is not 200 view this message.*/
+      $(".card-section").append("<h5>No properties was found with your search criteria. Try another address!</h5>");
+      }
+      return response.json();
+      })
+    .then(function (data) {
+      console.log('attom-response:', data);
+      console.log('address: ', street);
+      data.property.forEach(element => {
+      street = element.address.oneLine
+      bathrooms = element.building.rooms.bathstotal
+      bedrooms = element.building.rooms.beds
+      size = element.building.size.universalsize
+      lot = element.lot.lotSize1
+      proptype = element.summary.propclass
+      /* Create title & description of each house*/
+      /* Create ul & append to the page*/
+      $(".card-section").append("<ul class='list'>");
+      /* Append h4 & li list inside ul*/
+      $(".list").append(
+      /* Create title h4 & append to the page*/
+      "<h4>" + street + "</h4>",
+      /* Create list of li  & append to the page*/
+      "<li><img src='https://img.icons8.com/ios/20/null/bath.png'/> Bathrooms: " +
+      bathrooms +
+      "</li>",
+      "<li> <img src='https://img.icons8.com/ios/20/null/bedroom.png'/> Bedrooms: " +
+      bedrooms +
+      "</li>",
+      "<li><img src='https://img.icons8.com/external-outline-black-m-oki-orlando/20/null/external-squares-math-vol-2-outline-outline-black-m-oki-orlando.png'/> Square Footage: " +
+      size +
+      "</li>",
+      "<li><img src='https://img.icons8.com/ios/20/null/screen-resolution.png'/> Lot Size (acres): " +
+      lot +
+      "</li>",
+      "<li><img src='https://img.icons8.com/ios/20/null/home--v1.png'/> Property Type: " +
+      proptype +
+      "</li>"
+      );
       });
-
-    });
-}
+      });
+  });
+};
 
 /* Function show results on click or alert if empty*/
 $(document).ready(function () {
