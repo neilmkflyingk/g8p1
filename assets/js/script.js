@@ -37,7 +37,7 @@ function fetchHandler(event) {
         
         
         console.log('address: ', street);
-        for( let i =0; i < data.property.length ; i ++){
+        data.property.forEach(element => {
           street = element.address.oneLine
           bathrooms = element.building.rooms.bathstotal
           bedrooms = element.building.rooms.beds
@@ -47,12 +47,9 @@ function fetchHandler(event) {
           $(".card-section").append( "<h4>"+ street + "</h4>");
          //create house description  
     $(".card-section").append("<p>Bathrooms: " + bathrooms + "</p>", "<p>Bedrooms: " + bedrooms + "</p>","<p>Square Footage: " + size + "</p>","<p>Lot Size (acres): " + lot + "</p>","<p>Property Type: " + proptype + "</p>",);  
-        }
-        // data.property.forEach(element => {
-         
-        // });
       });
     });
+  });
 }
 var listings = [];
 
@@ -62,27 +59,13 @@ $(document).ready(function () {
     // show results on click
     $(".result").removeClass("hidden");
 
-    // function init() {
-    // var storedListings = JSON.parse(localStorage.getItem("listing"));
-    // if (storedListings != null) {
-    //   listings = storedListings;
-    // }}
 
-    // function storeListings() {
-    //   localStorage.setItem("listing", JSON.stringify(listings));
-    // }
-
-    listing = (document.getElementById("address-search").value);
+    var listing = (document.getElementById("address-search").value);
     localStorage.setItem("listing", listing);
-
-    // init();
-    // storeListings();
-    
   });
 });  
 
 // create & add elements using jquery
-function generatePropertyCard() {
   var resultCardBlock = "<div class='result-card'></div>";  
   $(".result").append(resultCardBlock);  
   var resultCardContent = "<div class='grid-x grid-margin-x result-card-content'></div>";
@@ -93,8 +76,3 @@ function generatePropertyCard() {
   var footer = "<footer class='text-center'><a href='https://github.com/neilmkflyingk/house-hunters'><i class='fi-social-github'>HOUSE HUNTERS</i></a></footer>";
   $(".result").append(footer); 
 
-}
-
-$(function() {
-  loadData();
-})
