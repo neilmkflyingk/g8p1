@@ -27,7 +27,7 @@ function fetchHandler(event) {
       console.log("Longitude:", longitude);
 
     fetch("https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?latitude="+latitude+"&longitude="+longitude+"&radius=2", {
-      headers: {'Accept': 'application/json', 'APIKey': 'b4030edd35f70d5e390f969f2e5c0f6f'}
+      headers: {'Accept': 'application/json', 'APIKey': '857b02eb1e097842f37baa5184c5ccf7'}
     })
       .then(function (response) {
         return response.json();

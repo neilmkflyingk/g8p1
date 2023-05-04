@@ -14,6 +14,14 @@ House-hunters application uses two APIs to get search result :
 
 2. Attom API (https://api.developer.attomdata.com/docs). 
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Requirements](#requirements)
+- [Credits](#credits)
+- [License](#license)
+
 ## Future features
 
 1. School district information
@@ -22,15 +30,6 @@ House-hunters application uses two APIs to get search result :
 4. Sales History
 5. Entertainment
 6. Restaurants
-
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Requirements](#requirements)
-- [Credits](#credits)
-- [License](#license)
 
 ## Installation
 
@@ -45,10 +44,11 @@ No special requirements
 1. Fill in the address & press search button
 2. Search results will appear
 
-
 Screenshot located in `assets/images` folder
 
-![house-hunters](assets/images/screenshot.png)
+<img src = "assets/images/screenshot.jpeg" alt = "screenshot">
+
+![house-hunters](assets/images/screenshot.jpeg)
 
 ## Credits
 
