@@ -14,6 +14,15 @@ House-hunters application uses two APIs to get search result :
 
 2. Attom API (https://api.developer.attomdata.com/docs). 
 
+## Future features
+
+1. School district information
+2. Traffic assesment
+3. Crime rates
+4. Sales History
+5. Entertainment
+6. Restaurants
+
 
 ## Table of Contents
 
