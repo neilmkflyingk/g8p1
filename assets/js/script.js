@@ -42,6 +42,10 @@ function fetchHandler(event) {
         }
       )
         .then(function (response) {
+          if (response.status !== 200) {
+            // If response.status is not 200 view this message.
+            $(".card-section").append("<h5>No addres was found with your search criteria. Try another addres!</h5>");
+          }
           return response.json();
         })
         .then(function (data) {
