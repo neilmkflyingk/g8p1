@@ -76,3 +76,13 @@ $(document).ready(function () {
   var footer = "<footer class='text-center'><a href='https://github.com/neilmkflyingk/house-hunters'><i class='fi-social-github'>HOUSE HUNTERS</i></a></footer>";
   $(".result").append(footer); 
 
+
+  $(function() {
+    loadData();
+  });
+
+  function loadData() {
+    var input = document.getElementById("address-search");
+    var saveAddress = localStorage.getItem('listing');
+    input.value = saveAddress
+  }
