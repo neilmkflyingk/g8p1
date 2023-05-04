@@ -158,9 +158,31 @@ footer a {
   margin-bottom: 5px;
 }
 
-.card-section p {
+.card-section li {
   background-color: #e6e6e6;
   margin: 10px 0;
   padding: 10px;
   max-width: 300px;
+  list-style: none;
 }
+/*Warning message if no address found*/
+h5 {
+  color: orange;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0px 10%;
+}
+
+.list{
+margin-bottom: 10%;
+
+}
+
+.form-input p{
+  color: red;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0px 20%;
+  font-size: 1.5rem;
+}
+
