@@ -53,15 +53,27 @@ function fetchHandler(event) {
         .then(function (data) {
           console.log("attom-response:", data);
 
-          console.log("address: ", street);
-          data.property.forEach((element) => {
-            street = element.address.oneLine;
-            bathrooms = element.building.rooms.bathstotal;
-            bedrooms = element.building.rooms.beds;
-            size = element.building.size.universalsize;
-            lot = element.lot.lotSize1;
-            proptype = element.summary.propclass;
-            /* Create title & description of each house*/
+
+    fetch("https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?latitude="+latitude+"&longitude="+longitude+"&radius=2", {
+      headers: {'Accept': 'application/json', 'APIKey': '857b02eb1e097842f37baa5184c5ccf7'}
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log('attom-response:', data);
+        
+        
+        console.log('address: ', street);
+        data.property.forEach(element => {
+          street = element.address.oneLine
+          bathrooms = element.building.rooms.bathstotal
+          bedrooms = element.building.rooms.beds
+          size = element.building.size.universalsize
+          lot = element.lot.lotSize1
+          proptype = element.summary.propclass
+
+    /* Create title & description of each house*/
 
             /* Create ul & append to the page*/
             $(".card-section").append("<ul class='list'>");
@@ -85,9 +97,8 @@ function fetchHandler(event) {
               "<li><img src='https://img.icons8.com/ios/20/null/home--v1.png'/> Property Type: " +
                 proptype +
                 "</li>"
-            );
-          });
-        });
+      });
+
     });
 }
 
