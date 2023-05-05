@@ -48,6 +48,24 @@ function fetchHandler(event) {
       size = element.building.size.universalsize
       lot = element.lot.lotSize1
       proptype = element.summary.propclass
+        /* IF undefined replace variable data with new text*/
+        if (bathrooms === undefined) {
+              bathrooms = "Nothing found";
+            }
+
+            if (bedrooms === undefined) {
+              bedrooms = "Nothing found";
+            }
+            if (size === undefined) {
+              size = "Nothing found";
+            }
+
+            if (lot === undefined) {
+              lot = "Nothing found";
+            }
+            if (proptype === undefined) {
+              proptype = "Nothing found";
+            }
       /* Create title & description of each house*/
       /* Create ul & append to the page*/
       $(".card-section").append("<ul class='list'>");
