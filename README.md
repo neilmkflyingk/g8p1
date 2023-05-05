@@ -54,8 +54,6 @@ No special requirements
 
 Screenshot located in `assets/images` folder
 
-<img src = "assets/images/screenshot.jpeg" alt = "screenshot">
-
 ![house-hunters](assets/images/screenshot.jpeg)
 
 ## Credits
